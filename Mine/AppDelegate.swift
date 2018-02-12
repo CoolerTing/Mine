@@ -16,6 +16,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow.init(frame: UIScreen.main.bounds)
+        let navi:UINavigationController = UINavigationController.init(rootViewController: RootViewController())
+        navi.navigationBar.barTintColor = UIColor.CustomColor(Red: 0, Green: 191, Blue: 255, Alpha: 1)
+        navi.navigationBar.isTranslucent = false
+        navi.navigationBar.tintColor = UIColor.white
+        navi.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.white]
+        navi.navigationBar.backIndicatorImage = UIImage.init(named: "ic-back-1")
+        navi.navigationBar.backIndicatorTransitionMaskImage = UIImage.init(named: "ic-back-1")
+        window?.rootViewController = navi
+        
+        let keyboardManager = IQKeyboardManager.shared()
+        keyboardManager.isEnabled = true
+        keyboardManager.shouldResignOnTouchOutside = true
+        keyboardManager.shouldToolbarUsesTextFieldTintColor = true
+        keyboardManager.toolbarManageBehaviour = .bySubviews
+        keyboardManager.isEnableAutoToolbar = false
+        keyboardManager.shouldShowToolbarPlaceholder = true
+        keyboardManager.placeholderFont = UIFont.systemFont(ofSize: 17)
+        keyboardManager.keyboardDistanceFromTextField = 10.0
+        
         return true
     }
 
