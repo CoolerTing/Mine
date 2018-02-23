@@ -73,6 +73,7 @@
 		5542F954202DAAA700DBE1C0 /* IQToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542F943202DAAA700DBE1C0 /* IQToolbar.m */; };
 		5542F955202DAAA700DBE1C0 /* IQUIView+IQKeyboardToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5542F945202DAAA700DBE1C0 /* IQUIView+IQKeyboardToolbar.m */; };
 		5542F956202DAAA700DBE1C0 /* IQKeyboardManager.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5542F947202DAAA700DBE1C0 /* IQKeyboardManager.bundle */; };
+		55921D93203E92C900FB75DB /* 可爱萌宠体.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55921D92203E92A200FB75DB /* 可爱萌宠体.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -183,6 +184,7 @@
 		5542F944202DAAA700DBE1C0 /* IQUIView+IQKeyboardToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "IQUIView+IQKeyboardToolbar.h"; sourceTree = "<group>"; };
 		5542F945202DAAA700DBE1C0 /* IQUIView+IQKeyboardToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "IQUIView+IQKeyboardToolbar.m"; sourceTree = "<group>"; };
 		5542F947202DAAA700DBE1C0 /* IQKeyboardManager.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = IQKeyboardManager.bundle; sourceTree = "<group>"; };
+		55921D92203E92A200FB75DB /* 可爱萌宠体.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "可爱萌宠体.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +304,7 @@
 				55263CA2202FD65100328786 /* 跳转动画效果 */,
 				55263CA3202FD65C00328786 /* 宏文件 */,
 				55263CA5202FD68200328786 /* 三方库 */,
+				55921D91203E928B00FB75DB /* 字体 */,
 				5542F8A1202D84B000DBE1C0 /* AppDelegate.swift */,
 				5542F8A5202D84B000DBE1C0 /* Main.storyboard */,
 				5542F8A8202D84B000DBE1C0 /* Assets.xcassets */,
@@ -450,6 +453,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		55921D91203E928B00FB75DB /* 字体 */ = {
+			isa = PBXGroup;
+			children = (
+				55921D92203E92A200FB75DB /* 可爱萌宠体.ttf */,
+			);
+			name = "字体";
+			path = "三方库";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -558,6 +570,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55921D93203E92C900FB75DB /* 可爱萌宠体.ttf in Resources */,
 				5542F956202DAAA700DBE1C0 /* IQKeyboardManager.bundle in Resources */,
 				5542F912202D853100DBE1C0 /* Info.plist in Resources */,
 				5542F8AC202D84B000DBE1C0 /* LaunchScreen.storyboard in Resources */,

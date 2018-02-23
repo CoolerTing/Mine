@@ -92,7 +92,8 @@ class RootViewController: BaseViewController, UITableViewDelegate,UITableViewDat
         
         let TestLabel = UILabel.init()
         TestLabel.textColor = UIColor.white
-        TestLabel.font = UIFont.systemFont(ofSize: 20)
+//        TestLabel.font = UIFont.systemFont(ofSize: 20)
+        TestLabel.font = UIFont.init(name: "keai mengchong", size: 20)
         TestLabel.text = "山寨饿了么"
         HeaderView.addSubview(TestLabel)
         self.TestLabel = TestLabel
@@ -128,6 +129,7 @@ class RootViewController: BaseViewController, UITableViewDelegate,UITableViewDat
         self.DatePicker = picker
         picker.snp.makeConstraints { (make) in
             make.top.equalTo(Button.snp.bottom)
+            make.left.right.equalToSuperview()
         }
         
         let text = UITextField.init()
@@ -151,10 +153,22 @@ class RootViewController: BaseViewController, UITableViewDelegate,UITableViewDat
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.delegate = self
+        self.AnimateTableView()
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.delegate = nil
+    }
+    
+    func AnimateTableView() {
+        let cell = MainTableView.visibleCells
+        let tableHeight = MainTableView.bounds.size.height
+        for (index,cell) in cell.enumerated() {
+            cell.transform = CGAffineTransform.init(translationX: 0, y: tableHeight)
+            UIView.animate(withDuration: 1, delay: 0.04 * Double(index), usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+        }
     }
     @objc func TestOrder() {
         if arc4random_uniform(2) == 1 {
@@ -200,6 +214,18 @@ class RootViewController: BaseViewController, UITableViewDelegate,UITableViewDat
         {
             self.navigationController?.pushViewController(SecondViewController(), animated: true)
         }
+    }
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.2, animations: {
+            let cell = tableView.cellForRow(at: indexPath) as! RootTableViewCell
+            cell.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        })
+    }
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        UIView.animate(withDuration: 0.2, animations: {
+            let cell = tableView.cellForRow(at: indexPath) as! RootTableViewCell
+            cell.transform = CGAffineTransform.identity
+        })
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.contentOffset.y <= -WholeHeight! {
